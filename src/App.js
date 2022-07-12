@@ -1,10 +1,24 @@
 //import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import Users from "./user/pages/Users";
+import NewPlace from "./places/pages/NewPlace";
+import "./App.css";
 
-function App() {
+const App = () => {
   return (
-    <h1>Lets start</h1>
+    <Router>
+      <Routes>
+        <Route path="/" excat element={<Users />} />
+        <Route path="/places/new" excat element={<NewPlace />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
