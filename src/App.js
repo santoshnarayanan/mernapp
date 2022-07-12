@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Users from "./user/pages/Users";
 import NewPlace from "./places/pages/NewPlace";
+import UserPlaces from "./places/pages/UserPlaces";
 import MainNavigation from "./shared/Navigation/MainNavigation";
 import "./App.css";
 
@@ -17,6 +18,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" excat element={<Users />} />
+          <Route path="/:userId/places" exact element={<UserPlaces />} />
           <Route path="/places/new" excat element={<NewPlace />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
